@@ -1,0 +1,11 @@
+require 'fileutils'
+require 'rtesseract'
+require 'win32/screenshot'
+require 'selenium-webdriver'
+
+driver = Selenium::WebDriver.for :firefox
+driver.navigate.to "https://www.geogra.ro/joc/rauri/rauri.php"
+intrebare = driver.find_element(id: 'intrebare')
+mures = driver.find_element(id: '6')
+mures.click
+puts intrebare.text
